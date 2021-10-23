@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrameLayout.Views.AboutPage"
+             xmlns:vm="clr-namespace:FrameLayout.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+				<Label Text="Estudiantes" HorizontalTextAlignment="Center" FontSize="Title"/>
+				
+				<Label Text="Nombre del estudiante" FontSize="Caption"/>
+				<Entry Placeholder="Nombre" Keyboard="Plain"/>
+				<Label Text="Apellido del estudiante" FontSize="Caption"/>
+				<Entry Placeholder="Apellido" Keyboard="Plain"/>
+				<Label Text="Correo del estudiante" FontSize="Caption"/>
+				<Entry Placeholder="Correo" Keyboard="Email" />
+				<Label Text="Edad del estudiante" FontSize="Caption"/>
+				<Entry Placeholder="Edad" Keyboard="Numeric" />
+				<Label Text="Teléfono del estudiante" FontSize="Caption"/>
+				<Entry Placeholder="Teléfono" Keyboard="Telephone" />
+				<Label Text="Contraseña" FontSize="Caption"/>
+				<Entry Placeholder="Contraseña" Keyboard="Text" IsPassword="True" />
+				
+                <Button Margin="0,10,0,0" Text="Registrar"
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrameLayout.Views.ItemsPage"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:FrameLayout.ViewModels"  
+             xmlns:model="clr-namespace:FrameLayout.Models"  
+             x:Name="BrowseItemsPage">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>-->
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+		<StackLayout>
+			<Label Text="ListView Model"
+				   HorizontalOptions="Center"
+				   VerticalOptions="CenterAndExpand" />
+			<ListView x:Name="modelos">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Orientation="Horizontal">
+								<Label Text="{Binding description}" 
+									   FontSize="16"
+									   TextColor="DarkBlue"
+									   HorizontalOptions="FillAndExpand"/>
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+</ContentPage>
